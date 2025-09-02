@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Sure Point Diagnostics & Medical Services</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="/images/sure-point-logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles specific to about page */
+        .about-section {
+            padding: 80px 0;
+        }
+        
+        .about-section:nth-child(even) {
+            background-color: var(--light-bg);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--dark-bg);
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .mission-vision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .mission-card,
+        .vision-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .mission-card h3,
+        .vision-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark-bg);
+            font-size: 1.5rem;
+        }
+        
+        .mission-card i,
+        .vision-card i {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .value-card {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .value-card i {
+            font-size: 35px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .value-card h3 {
+            margin-bottom: 10px;
+            color: var(--dark-bg);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border: 4px solid var(--primary-color);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+        
+        .timeline-left {
+            left: 0;
+        }
+        
+        .timeline-right {
+            left: 50%;
+        }
+        
+        .timeline-left::after {
+            right: -10px;
+        }
+        
+        .timeline-right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .timeline-content h3 {
+            margin-bottom: 10px;
+            color: var(--dark-bg);
+        }
+        
+        .timeline-content .date {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .stat-card {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: var(--dark-bg);
+            font-weight: 500;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 120px 0 70px;
+            color: var(--light-text);
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .breadcrumb a:hover {
+            color: #fff;
+        }
+        
+        .breadcrumb .separator {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+                margin-bottom: 30px;
+            }
+            
+            .mission-vision {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-right {
+                left: 0;
+            }
+            
+            .timeline-left::after,
+            .timeline-right::after {
+                left: 21px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/sure-point-logo.png" alt="Sure Point Logo">
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="doctors.html">Our Doctors</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>About Sure Point</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="separator">/</span>
+                <span>About Us</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Who We Are</h2>
+                    <p>Sure Point Diagnostics & Medical Services is a leading healthcare provider specializing in advanced diagnostic services and comprehensive medical care. Founded in 2005, we have been at the forefront of medical diagnostics, combining cutting-edge technology with compassionate patient care.</p>
+                    <p>Our team consists of highly qualified medical professionals, technicians, and support staff who are dedicated to providing accurate diagnostics and exceptional patient experiences. We believe in a patient-centered approach where your comfort and well-being are our top priorities.</p>
+                    <p>At Sure Point, we are committed to maintaining the highest standards of quality and accuracy in all our diagnostic procedures. Our state-of-the-art facilities are equipped with the latest medical technology to ensure precise results and efficient service.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/medium-shot-scientists-posing-together.jpg" alt="Sure Point Medical Team">
+                </div>
+            </div>
+
+            <div class="mission-vision">
+                <div class="mission-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Our Mission</h3>
+                    <p>To provide accessible, accurate, and advanced diagnostic services that empower patients and healthcare providers to make informed medical decisions, ultimately improving health outcomes and quality of life.</p>
+                </div>
+                <div class="vision-card">
+                    <i class="fas fa-eye"></i>
+                    <h3>Our Vision</h3>
+                    <p>To be the most trusted name in diagnostic healthcare, recognized for excellence in service quality, technological innovation, and patient-centered care across the healthcare industry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide our operations and interactions with patients and healthcare partners</p>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Compassion</h3>
+                    <p>We approach every patient with empathy and understanding, recognizing that behind every test is a person with unique needs and concerns.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-check-double"></i>
+                    <h3>Accuracy</h3>
+                    <p>We maintain rigorous quality control standards to ensure the highest level of precision in all our diagnostic procedures and results.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Integrity</h3>
+                    <p>We conduct our business with honesty, transparency, and ethical practices, earning the trust of our patients and healthcare partners.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Innovation</h3>
+                    <p>We continuously seek advancements in medical technology and procedures to provide the most effective diagnostic services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our History Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Journey</h2>
+                <p>The evolution of Sure Point from a small diagnostic center to a comprehensive medical services provider</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <span class="date">2005</span>
+                        <h3>Foundation</h3>
+                        <p>Sure Point was established as a small diagnostic laboratory with a team of five medical professionals.</p>
+                    </div>
+                </div>
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content">
+                        <span class="date">2008</span>
+                        <h3>Expansion</h3>
+                        <p>Added advanced imaging services including X-ray, ultrasound, and CT scan facilities.</p>
+                    </div>
+                </div>
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <span class="date">2012</span>
+                        <h3>Technology Upgrade</h3>
+                        <p>Invested in state-of-the-art diagnostic equipment and digital reporting systems.</p>
+                    </div>
+                </div>
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content">
+                        <span class="date">2015</span>
+                        <h3>New Headquarters</h3>
+                        <p>Moved to our current facility with expanded capacity and specialized departments.</p>
+                    </div>
+                </div>
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <span class="date">2018</span>
+                        <h3>Quality Certification</h3>
+                        <p>Received international accreditation for quality standards in diagnostic services.</p>
+                    </div>
+                </div>
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content">
+                        <span class="date">2023</span>
+                        <h3>Digital Transformation</h3>
+                        <p>Launched online appointment booking and digital result delivery systems for enhanced patient convenience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Sure Point in Numbers</h2>
+                <p>Our impact in the healthcare community over the years</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">18+</div>
+                    <div class="stat-label">Years of Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Medical Experts</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100K+</div>
+                    <div class="stat-label">Patients Served</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Diagnostic Services</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Location</h2>
+                <p>Visit us at our medical center</p>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.3494161992794!2d120.97715126387476!3d14.579154830438664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397cb0061be4435%3A0x90d247304bf7fc1a!2sSurepoint%20Diagnostics%20and%20Medical%20Services!5e0!3m2!1sen!2sph!4v1756832574423!5m2!1sen!2sph" width="100%" height="450" style="border:0; border-radius:10px; box-shadow: var(--shadow);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to experience our quality care?</h2>
+                <p>Schedule an appointment today and let our expert team take care of your health needs.</p>
+                <a href="contact.html" class="btn btn-light">Contact Us Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="images/sure-point-logo.png" alt="Sure Point Logo" class="footer-logo">
+                    <p>Providing quality diagnostic and medical services with a focus on patient care and advanced technology.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="doctors.html">Our Doctors</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="services.html#laboratory">Laboratory Services</a></li>
+                        <li><a href="services.html#imaging">Diagnostic Imaging</a></li>
+                        <li><a href="services.html#cardiology">Cardiology Diagnostics</a></li>
+                        <li><a href="services.html#neurology">Neurology Tests</a></li>
+                        <li><a href="services.html#health-checkups">Health Checkups</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 415 Plaza Nuestra Sra. De Guia, Ermita, Manila, Philippines</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@surepointdiagnostics.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 8:00 PM</li>
+                        <li><i class="fas fa-clock"></i> Sat-Sun: 9:00 AM - 5:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Sure Point Diagnostics & Medical Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

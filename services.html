@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Sure Point Diagnostics & Medical Services</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="/images/sure-point-logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles specific to services page */
+        .service-detail {
+            padding: 80px 0;
+        }
+        
+        .service-detail:nth-child(even) {
+            background-color: var(--light-bg);
+        }
+        
+        .service-detail .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .service-detail:nth-child(even) .container {
+            direction: rtl;
+        }
+        
+        .service-detail-content,
+        .service-detail-image {
+            direction: ltr;
+        }
+        
+        .service-detail-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--dark-bg);
+        }
+        
+        .service-detail-content p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .service-features {
+            margin-top: 20px;
+        }
+        
+        .service-features li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-features li i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+        
+        .service-detail-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 120px 0 70px;
+            color: var(--light-text);
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .breadcrumb a:hover {
+            color: #fff;
+        }
+        
+        .breadcrumb .separator {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        @media (max-width: 768px) {
+            .service-detail .container,
+            .service-detail:nth-child(even) .container {
+                grid-template-columns: 1fr;
+                direction: ltr;
+            }
+            
+            .service-detail-image {
+                margin-top: 30px;
+            }
+            
+            .service-detail:nth-child(even) .service-detail-image {
+                grid-row: 2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="images/sure-point-logo.png" alt="Sure Point Logo"></a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="doctors.html">Our Doctors</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Services</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="separator">/</span>
+                <span>Services</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="services-overview">
+        <div class="container">
+            <div class="section-header">
+                <h2>Comprehensive Diagnostic Services</h2>
+                <p>At Sure Point, we offer a wide range of diagnostic and medical services using state-of-the-art technology and expert medical professionals.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Laboratory Services -->
+    <section id="laboratory" class="service-detail">
+        <div class="container">
+            <div class="service-detail-content">
+                <h2>Laboratory Services</h2>
+                <p>Our advanced laboratory offers comprehensive testing services with quick and accurate results. Our state-of-the-art equipment and experienced technicians ensure reliable diagnostics for better healthcare decisions.</p>
+                <p>We maintain the highest standards of quality control and follow strict protocols to ensure accurate test results every time.</p>
+                <div class="service-features">
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Complete Blood Count (CBC)</li>
+                        <li><i class="fas fa-check-circle"></i> Comprehensive Metabolic Panel</li>
+                        <li><i class="fas fa-check-circle"></i> Lipid Profile and Cholesterol Testing</li>
+                        <li><i class="fas fa-check-circle"></i> Thyroid Function Tests</li>
+                        <li><i class="fas fa-check-circle"></i> Diabetes Testing and Monitoring</li>
+                        <li><i class="fas fa-check-circle"></i> Allergy Testing</li>
+                        <li><i class="fas fa-check-circle"></i> Microbiology and Culture Tests</li>
+                    </ul>
+                </div>
+                <a href="contact.html" class="btn btn-primary" style="margin-top: 20px;">Book a Test</a>
+            </div>
+            <div class="service-detail-image">
+                <img src="images/woman-working-laborator.jpg" alt="Laboratory Services">
+            </div>
+        </div>
+    </section>
+
+    <!-- Diagnostic Imaging -->
+    <section id="imaging" class="service-detail">
+        <div class="container">
+            <div class="service-detail-content">
+                <h2>Diagnostic Imaging</h2>
+                <p>Our imaging department is equipped with the latest technology to provide clear and detailed images for accurate diagnosis. Our experienced radiologists interpret results with precision to help guide your treatment.</p>
+                <p>We prioritize patient comfort and safety while delivering high-quality diagnostic imaging services.</p>
+                <div class="service-features">
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> X-ray Imaging</li>
+                        <li><i class="fas fa-check-circle"></i> Ultrasound Examinations</li>
+                        <li><i class="fas fa-check-circle"></i> CT (Computed Tomography) Scans</li>
+                        <li><i class="fas fa-check-circle"></i> MRI (Magnetic Resonance Imaging)</li>
+                        <li><i class="fas fa-check-circle"></i> Mammography</li>
+                        <li><i class="fas fa-check-circle"></i> Bone Density Scans</li>
+                    </ul>
+                </div>
+                <a href="contact.html" class="btn btn-primary" style="margin-top: 20px;">Schedule Imaging</a>
+            </div>
+            <div class="service-detail-image">
+                <img src="images/doctor-looking-ct-scan.jpg" alt="Diagnostic Imaging">
+            </div>
+        </div>
+    </section>
+
+    <!-- Cardiology Diagnostics -->
+    <section id="cardiology" class="service-detail">
+        <div class="container">
+            <div class="service-detail-content">
+                <h2>Cardiology Diagnostics</h2>
+                <p>Our cardiology diagnostic services help assess heart health and function through various non-invasive and minimally invasive procedures. Early detection of heart conditions can lead to more effective treatment and better outcomes.</p>
+                <p>Our cardiologists use the latest techniques and equipment to provide comprehensive heart health evaluations.</p>
+                <div class="service-features">
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Electrocardiogram (ECG/EKG)</li>
+                        <li><i class="fas fa-check-circle"></i> Echocardiogram</li>
+                        <li><i class="fas fa-check-circle"></i> Stress Tests</li>
+                        <li><i class="fas fa-check-circle"></i> Holter Monitoring</li>
+                        <li><i class="fas fa-check-circle"></i> Blood Pressure Monitoring</li>
+                        <li><i class="fas fa-check-circle"></i> Cardiac Risk Assessment</li>
+                    </ul>
+                </div>
+                <a href="contact.html" class="btn btn-primary" style="margin-top: 20px;">Heart Health Check</a>
+            </div>
+            <div class="service-detail-image">
+                <img src="images/physician-explaining-cardiology-diagnosis-with-image-heart-organ-tablet-patient-general-practitioner-showing-illustration-cardiovascular-system-anatomical-structure-man.jpg" alt="Cardiology Diagnostics">
+            </div>
+        </div>
+    </section>
+
+    <!-- Neurology Tests -->
+    <section id="neurology" class="service-detail">
+        <div class="container">
+            <div class="service-detail-content">
+                <h2>Neurology Tests</h2>
+                <p>Our neurology diagnostic services help evaluate brain function, nerve conditions, and neurological disorders. Our specialists use advanced techniques to diagnose and monitor neurological health.</p>
+                <p>Early detection and accurate diagnosis are crucial for effective treatment of neurological conditions.</p>
+                <div class="service-features">
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Electroencephalogram (EEG)</li>
+                        <li><i class="fas fa-check-circle"></i> Electromyography (EMG)</li>
+                        <li><i class="fas fa-check-circle"></i> Nerve Conduction Studies</li>
+                        <li><i class="fas fa-check-circle"></i> Cognitive Function Tests</li>
+                        <li><i class="fas fa-check-circle"></i> Sleep Studies</li>
+                        <li><i class="fas fa-check-circle"></i> Balance and Coordination Tests</li>
+                    </ul>
+                </div>
+                <a href="contact.html" class="btn btn-primary" style="margin-top: 20px;">Neurological Assessment</a>
+            </div>
+            <div class="service-detail-image">
+                <img src="images/back-view-man-patient-wearing-performant-brainwave-scanning-headset-sitting-neurological-research-laboratory-while-medical-researcher-adjusting-it-examining-nervous-system-typing-tablet.jpg" alt="Neurology Tests">
+            </div>
+        </div>
+    </section>
+
+    <!-- Health Checkups -->
+    <section id="health-checkups" class="service-detail">
+        <div class="container">
+            <div class="service-detail-content">
+                <h2>Comprehensive Health Checkups</h2>
+                <p>Our health checkup packages are designed to assess your overall health status and identify potential health risks before they become serious. Regular health checkups are essential for preventive healthcare and early detection of medical conditions.</p>
+                <p>We offer customized health packages based on age, gender, family history, and specific health concerns.</p>
+                <div class="service-features">
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Basic Health Checkup</li>
+                        <li><i class="fas fa-check-circle"></i> Executive Health Checkup</li>
+                        <li><i class="fas fa-check-circle"></i> Women's Health Checkup</li>
+                        <li><i class="fas fa-check-circle"></i> Men's Health Checkup</li>
+                        <li><i class="fas fa-check-circle"></i> Senior Citizen Health Checkup</li>
+                        <li><i class="fas fa-check-circle"></i> Diabetes Risk Assessment</li>
+                        <li><i class="fas fa-check-circle"></i> Cardiac Risk Assessment</li>
+                    </ul>
+                </div>
+                <a href="contact.html" class="btn btn-primary" style="margin-top: 20px;">Book Health Checkup</a>
+            </div>
+            <div class="service-detail-image">
+                <img src="images/doctor-checking-medical-condition-patient.jpg" alt="Health Checkups">
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Need a specialized diagnostic service?</h2>
+                <p>Contact our team to discuss your specific healthcare needs and how we can help.</p>
+                <a href="contact.html" class="btn btn-light">Contact Us Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="images/sure-point-logo.png" alt="Sure Point Logo" class="footer-logo">
+                    <p>Providing quality diagnostic and medical services with a focus on patient care and advanced technology.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="doctors.html">Our Doctors</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="services.html#laboratory">Laboratory Services</a></li>
+                        <li><a href="services.html#imaging">Diagnostic Imaging</a></li>
+                        <li><a href="services.html#cardiology">Cardiology Diagnostics</a></li>
+                        <li><a href="services.html#neurology">Neurology Tests</a></li>
+                        <li><a href="services.html#health-checkups">Health Checkups</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Medical Center Drive, Healthcare City</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@surepointdiagnostics.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 8:00 PM</li>
+                        <li><i class="fas fa-clock"></i> Sat-Sun: 9:00 AM - 5:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Sure Point Diagnostics & Medical Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

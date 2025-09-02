@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/sure-point-logo.png">
+    <title>Sure Point Website Testing</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .test-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .test-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .test-section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .test-section h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .test-item {
+            margin-bottom: 15px;
+        }
+        
+        .test-item label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .test-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .test-links a {
+            padding: 8px 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .test-links a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .test-result {
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        
+        .test-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .test-buttons button {
+            padding: 8px 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .test-buttons button:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .test-status {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-left: 10px;
+        }
+        
+        .status-pass {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .status-fail {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        
+        .responsive-test {
+            margin-top: 30px;
+        }
+        
+        .device-sizes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .device-size {
+            padding: 10px 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .device-size:hover {
+            background-color: #e9ecef;
+        }
+        
+        .device-size.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="test-header">
+            <h1>Sure Point Website Testing</h1>
+            <p>Use this page to test website functionality across different browsers and devices</p>
+        </div>
+        
+        <div class="test-section">
+            <h3>Page Navigation Testing</h3>
+            <div class="test-links">
+                <a href="index.html" target="_blank">Home</a>
+                <a href="services.html" target="_blank">Services</a>
+                <a href="about.html" target="_blank">About Us</a>
+                <a href="doctors.html" target="_blank">Doctors</a>
+                <a href="contact.html" target="_blank">Contact</a>
+            </div>
+            <div class="test-item">
+                <label>Navigation Test:</label>
+                <div class="test-buttons">
+                    <button onclick="markTest(this, 'pass')">Pass</button>
+                    <button onclick="markTest(this, 'fail')">Fail</button>
+                </div>
+                <div class="test-result" id="nav-test-result"></div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>Functionality Testing</h3>
+            <div class="test-item">
+                <label>Mobile Menu Toggle:</label>
+                <div class="test-buttons">
+                    <button onclick="markTest(this, 'pass')">Pass</button>
+                    <button onclick="markTest(this, 'fail')">Fail</button>
+                </div>
+                <div class="test-result" id="menu-test-result"></div>
+            </div>
+            
+            <div class="test-item">
+                <label>Contact Form Validation:</label>
+                <div class="test-buttons">
+                    <button onclick="markTest(this, 'pass')">Pass</button>
+                    <button onclick="markTest(this, 'fail')">Fail</button>
+                </div>
+                <div class="test-result" id="form-test-result"></div>
+            </div>
+            
+            <div class="test-item">
+                <label>FAQ Accordion (Contact Page):</label>
+                <div class="test-buttons">
+                    <button onclick="markTest(this, 'pass')">Pass</button>
+                    <button onclick="markTest(this, 'fail')">Fail</button>
+                </div>
+                <div class="test-result" id="faq-test-result"></div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>Responsive Design Testing</h3>
+            <p>Test the website at these common device sizes:</p>
+            
+            <div class="device-sizes">
+                <div class="device-size" onclick="testResponsive('1920px', '1080px')">Desktop (1920×1080)</div>
+                <div class="device-size" onclick="testResponsive('1366px', '768px')">Laptop (1366×768)</div>
+                <div class="device-size" onclick="testResponsive('768px', '1024px')">Tablet (768×1024)</div>
+                <div class="device-size" onclick="testResponsive('375px', '812px')">Mobile (375×812)</div>
+            </div>
+            
+            <div class="test-item responsive-test">
+                <label>Responsive Layout Test:</label>
+                <div class="test-buttons">
+                    <button onclick="markTest(this, 'pass')">Pass</button>
+                    <button onclick="markTest(this, 'fail')">Fail</button>
+                </div>
+                <div class="test-result" id="responsive-test-result"></div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>Browser Compatibility</h3>
+            <div class="test-item">
+                <label>Current Browser: <span id="current-browser"></span></label>
+                <div class="test-buttons">
+                    <button onclick="markTest(this, 'pass')">Pass</button>
+                    <button onclick="markTest(this, 'fail')">Fail</button>
+                </div>
+                <div class="test-result" id="browser-test-result"></div>
+            </div>
+            <p>Please test in multiple browsers: Chrome, Firefox, Safari, Edge</p>
+        </div>
+        
+        <div class="test-section">
+            <h3>Overall Assessment</h3>
+            <div class="test-item">
+                <label>Website Performance:</label>
+                <div class="test-buttons">
+                    <button onclick="markOverall('Excellent')">Excellent</button>
+                    <button onclick="markOverall('Good')">Good</button>
+                    <button onclick="markOverall('Average')">Average</button>
+                    <button onclick="markOverall('Poor')">Poor</button>
+                </div>
+                <div class="test-result" id="overall-result"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Detect browser
+            const browser = detectBrowser();
+            document.getElementById('current-browser').textContent = browser;
+        });
+        
+        function markTest(button, status) {
+            const resultDiv = button.parentElement.nextElementSibling;
+            const timestamp = new Date().toLocaleTimeString();
+            
+            if (status === 'pass') {
+                resultDiv.innerHTML = `<span class="test-status status-pass">PASS</span> Test passed at ${timestamp}`;
+            } else {
+                resultDiv.innerHTML = `<span class="test-status status-fail">FAIL</span> Test failed at ${timestamp}`;
+            }
+        }
+        
+        function markOverall(rating) {
+            const resultDiv = document.getElementById('overall-result');
+            resultDiv.textContent = `Overall rating: ${rating}`;
+        }
+        
+        function testResponsive(width, height) {
+            const url = 'index.html';
+            const features = `width=${width},height=${height},resizable=yes,scrollbars=yes,status=yes`;
+            window.open(url, 'responsiveTest', features);
+            
+            // Mark the clicked size as active
+            const sizes = document.querySelectorAll('.device-size');
+            sizes.forEach(size => size.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+        
+        function detectBrowser() {
+            const userAgent = navigator.userAgent;
+            let browserName;
+            
+            if (userAgent.match(/chrome|chromium|crios/i)) {
+                browserName = "Chrome";
+            } else if (userAgent.match(/firefox|fxios/i)) {
+                browserName = "Firefox";
+            } else if (userAgent.match(/safari/i)) {
+                browserName = "Safari";
+            } else if (userAgent.match(/opr\//i)) {
+                browserName = "Opera";
+            } else if (userAgent.match(/edg/i)) {
+                browserName = "Edge";
+            } else {
+                browserName = "Unknown";
+            }
+            
+            return browserName;
+        }
+    </script>
+</body>
+</html>
